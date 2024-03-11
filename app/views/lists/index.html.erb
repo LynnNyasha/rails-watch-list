@@ -1,0 +1,16 @@
+<div id="container" class="container">
+  <h1 class="text-white text-bold">Your place to organize what you want to see</h1>
+  <div class="text-center"> <!-- Center align the content -->
+    <%= link_to "Create list", new_list_path, class: "btn btn-primary btn-lg btn-create-list" %>
+  </div>
+
+  <div id="lists" class="row justify-content-center">
+    <% @lists.each do |list| %>
+      <div class="col-md-3">
+        <ul>
+          <li><%= link_to list.name, list_path(list), class: "text-white" %></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>
